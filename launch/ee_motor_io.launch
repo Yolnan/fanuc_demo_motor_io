@@ -1,0 +1,13 @@
+<launch>
+    <rosparam file="$(find ee_motor_io)/config/ee_motor_io.yaml" />
+    <node name="ee_motor_io_node" pkg="ee_motor_io" type="ee_motor_io_node" output="screen" />  
+
+    <arg name="port_address" default="/dev/ttyACM0"/>
+    <arg name="baud_rate" default="57600" />
+
+    <node name="serial_node"        pkg="rosserial_python"      type="serial_node.py" >
+        <param name="port"              type="string"               value="$(arg port_address)"/>
+        <param name="baud"              type="int"                  value="$(arg baud_rate)"/>
+    </node>
+
+</launch>

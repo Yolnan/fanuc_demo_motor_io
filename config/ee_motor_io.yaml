@@ -1,0 +1,3 @@
+target_frame_name: "base_link"
+source_frame_name: "sand_tcp"
+trigger_height: 1.0 
